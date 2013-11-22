@@ -1,2 +1,2 @@
 PRODUCT_MAKEFILES := \
-    $(LOCAL_DIR)/device_nicki.mk
+    $(LOCAL_DIR)/full_nicki.mk
