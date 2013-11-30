@@ -19,19 +19,19 @@ USE_CAMERA_STUB := true
 # inherit from the proprietary version
 -include vendor/sony/nicki/BoardConfigVendor.mk
 
+# inherit from Sony common
+-include device/sony/common/BoardConfigCommon.mk
+
+# inherit from qcom-common
+-include device/sony/qcom-common/BoardConfigCommon.mk
+
 # Assert
 TARGET_OTA_ASSERT_DEVICE := C1904,C1905,nicki
 
 # Architecture
-TARGET_ARCH := arm
-TARGET_NO_BOOTLOADER := true
 TARGET_BOARD_PLATFORM := msm8960
-TARGET_CPU_ABI := armeabi-v7a
-TARGET_CPU_ABI2 := armeabi
 TARGET_CPU_VARIANT := krait
-TARGET_ARCH_VARIANT := armv7-a-neon
 TARGET_ARCH_VARIANT_CPU := cortex-a9
-ARCH_ARM_HAVE_TLS_REGISTER := true
 
 # Flags
 TARGET_GLOBAL_CFLAGS += -mfpu=neon-vfpv4 -mfloat-abi=softfp
@@ -49,10 +49,11 @@ TARGET_KRAIT_BIONIC_PLDSIZE   := 64
 #TARGET_BOOTLOADER_BOARD_NAME := nicki
 TARGET_BOOTLOADER_BOARD_NAME := qcom
 
-BOARD_KERNEL_CMDLINE := panic=3 console=ttyHSL0,115200,n8 androidboot.hardware=qcom user_debug=31 msm_rtb.filter=0x3F ehci-hcd.park=3
-BOARD_KERNEL_BASE := 0x80200000
+# Kernel information
+BOARD_KERNEL_CMDLINE  := panic=3 console=ttyHSL0,115200,n8 androidboot.hardware=qcom user_debug=31 msm_rtb.filter=0x3F ehci-hcd.park=3
+BOARD_KERNEL_BASE     := 0x80200000
 BOARD_KERNEL_PAGESIZE := 4096
-BOARD_MKBOOTIMG_ARGS := --ramdisk_offset 0x02000000
+BOARD_MKBOOTIMG_ARGS  := --ramdisk_offset 0x02000000
 
 # fix this up by examining /proc/mtd on a running device
 BOARD_BOOTIMAGE_PARTITION_SIZE := 0x01400000
