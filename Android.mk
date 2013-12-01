@@ -11,5 +11,7 @@ ifeq ($(TARGET_DEVICE),nicki)
         ln -sf /data/misc/audio/mbhc.bin \
         $(TARGET_OUT_ETC)/firmware/wcd9310/wcd9310_mbhc.bin)
 
+# workaround for our screen resolution
+    $(shell cp $(LOCAL_PATH)/rootdir/logo.rle $(LOCAL_PATH)/../common/bootlogo/480x854.rle)
 endif
 
