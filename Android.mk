@@ -3,8 +3,6 @@ LOCAL_PATH := $(call my-dir)
 ifeq ($(TARGET_DEVICE),nicki)
     include $(call first-makefiles-under,$(LOCAL_PATH))
 
-    include $(LOCAL_PATH)/combinedroot/Android.mk
-
     $(shell mkdir -p $(TARGET_OUT_ETC)/firmware/wcd9310; \
         ln -sf /data/misc/audio/wcd9310_anc.bin \
         $(TARGET_OUT_ETC)/firmware/wcd9310/wcd9310_anc.bin; \

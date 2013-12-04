@@ -2,5 +2,8 @@
 # system.prop for nicki
 #
 
+# Make keys in CWM repeatable
+ro.cwm.enable_key_repeat=true
+
 # Graphics
 ro.sf.lcd_density=240

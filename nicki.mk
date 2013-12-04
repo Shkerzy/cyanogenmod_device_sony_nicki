@@ -59,7 +59,15 @@ PRODUCT_PACKAGES += \
     extract_elf_ramdisk
 
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/init.recovery.qcom.rc:root/init.recovery.qcom.rc
+    $(LOCAL_PATH)/rootdir/init.recovery.qcom.rc:root/init.recovery.qcom.rc
+
+# Post recovery script
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/recovery/postrecoveryboot.sh:recovery/root/sbin/postrecoveryboot.sh
+
+# Device specific part for two-stage boot
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/recovery/bootrec-device:recovery/bootrec-device
 
 # Build DeviceParts
 PRODUCT_PACKAGES += \

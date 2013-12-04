@@ -52,7 +52,7 @@ TARGET_BOOTLOADER_BOARD_NAME := qcom
 # Kernel information
 BOARD_KERNEL_CMDLINE  := panic=3 console=ttyHSL0,115200,n8 androidboot.hardware=qcom user_debug=31 msm_rtb.filter=0x3F ehci-hcd.park=3
 BOARD_KERNEL_BASE     := 0x80200000
-BOARD_KERNEL_PAGESIZE := 4096
+BOARD_KERNEL_PAGESIZE := 2048
 BOARD_MKBOOTIMG_ARGS  := --ramdisk_offset 0x02000000
 
 # fix this up by examining /proc/mtd on a running device
@@ -70,7 +70,7 @@ TARGET_KERNEL_CONFIG := proj_S3A_user_alvin_defconfig
 # if not present - use prebuilt
 TARGET_PREBUILT_KERNEL := device/sony/nicki/kernel
 
-NICKI_RAMDISK_PREBUILT := device/sony/nicki/stock-boot-ramdisk.gz
+BOARD_CUSTOM_BOOTIMG_MK := device/sony/nicki/custombootimg.mk
 
 # CWM Recovery
 BOARD_HAS_NO_SELECT_BUTTON := true
