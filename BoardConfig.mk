@@ -55,7 +55,35 @@ BOARD_KERNEL_BASE     := 0x80200000
 BOARD_KERNEL_PAGESIZE := 2048
 BOARD_MKBOOTIMG_ARGS  := --ramdisk_offset 0x02000000
 
-# fix this up by examining /proc/mtd on a running device
+# dev:          size   erasesize  name
+# mmcblk0p1:  00200000 00000000 "TA"
+# mmcblk0p2:  00020000 00000000 "sbl1"
+# mmcblk0p3:  00040000 00000000 "sbl2"
+# mmcblk0p4:  00040000 00000000 "s1sbl2"
+# mmcblk0p5:  00080000 00000000 "sbl3"
+# mmcblk0p6:  00080000 00000000 "aboot"
+# mmcblk0p7:  00080000 00000000 "tz"
+# mmcblk0p8:  00020000 00000000 "alt_sbl1"
+# mmcblk0p9:  00040000 00000000 "alt_sbl2"
+# mmcblk0p10: 00040000 00000000 "alt_s1sbl2"
+# mmcblk0p11: 00080000 00000000 "alt_sbl3"
+# mmcblk0p12: 00080000 00000000 "alt_aboot"
+# mmcblk0p13: 00080000 00000000 "alt_tz"
+# mmcblk0p14: 00080000 00000000 "rpm"
+# mmcblk0p15: 00080000 00000000 "alt_rpm"
+# mmcblk0p16: 01000000 00000000 "LTALabel"
+# mmcblk0p17: 01400000 00000000 "boot"
+# mmcblk0p18: 04000000 00000000 "modem"
+# mmcblk0p19: 00300000 00000000 "modemst1"
+# mmcblk0p20: 00300000 00000000 "modemst2"
+# mmcblk0p21: 00300000 00000000 "fsg"
+# mmcblk0p22: 00500000 00000000 "ramdump"
+# mmcblk0p23: 01000000 00000000 "FOTAKernel"
+# mmcblk0p24: 00400000 00000000 "persist"
+# mmcblk0p25: 4b000000 00000000 "system"
+# mmcblk0p26: 0fc00000 00000000 "cache"
+# mmcblk0p27: 853fbe00 00000000 "userdata"
+
 BOARD_BOOTIMAGE_PARTITION_SIZE := 0x01400000
 BOARD_RECOVERYIMAGE_PARTITION_SIZE := 0x01400000
 BOARD_SYSTEMIMAGE_PARTITION_SIZE := 0x4B000000
