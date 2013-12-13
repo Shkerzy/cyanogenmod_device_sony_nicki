@@ -91,6 +91,11 @@ BOARD_USERDATAIMAGE_PARTITION_SIZE := 0x853FBE00
 BOARD_FLASH_BLOCK_SIZE := 131072
 TARGET_USERIMAGES_USE_EXT4 := true
 
+# Partition information
+BOARD_VOLD_MAX_PARTITIONS := 27
+
+BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := device/sony/nicki/bluetooth
+
 # Kernel
 # Try build from source
 TARGET_KERNEL_SOURCE := kernel/sony/nicki
